@@ -1,7 +1,7 @@
 import { Balancegame } from './Balancegame.type';
 
 export interface BalancegameResponse {
-  games: Balancegame[];
+  balance_games: Balancegame[];
   status: number;
   message: string;
 }

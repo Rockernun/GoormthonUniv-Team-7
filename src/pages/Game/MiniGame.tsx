@@ -1,5 +1,5 @@
 import ExplainCloud from 'components/Cloud/ExplainCloud';
-import NavBar from 'components/NavBar';
+import NavBar from 'components/Bar/NavBar';
 import ShowGame from './ShowGame';
 
 const MiniGame = () => {

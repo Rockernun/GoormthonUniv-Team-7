@@ -1,14 +1,16 @@
 import React from 'react';
 
-const Description: React.FC<{ text: string }> = ({ text }) => {
+interface DescriptionProps {
+  text: string;
+}
+
+const Description: React.FC<DescriptionProps> = ({ text }) => {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="max-w-[342px] bg-white border border-txt_primary border-2 px-[16px] py-[12px] rounded-description shadow-description">
-        <p className="text-base text-center leading-content whitespace-pre-wrap break-words">
-          {text}
-        </p>
+    <div className="flex flex-col justify-center items-center max-w-[335px]">
+      <div className="border-2 border-txt_primary px-[16px] py-[12px] rounded-description shadow-description bg-white">
+        <p className="text-base text-center whitespace-pre-wrap">{text}</p>
       </div>
-      <img className="w-[12px] h-[6px] mt-[-8px]" src="/assets/triangle.svg" alt="triangle" />
+      <img className="mt-[-8px]" src="/assets/triangle.svg" alt="triangle" />
     </div>
   );
 };

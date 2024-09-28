@@ -1,4 +1,4 @@
-import { LargeButton } from 'components/Button/Button';
+import { LargeButton, XLargeButton } from 'components/Button/Button';
 import Initial from 'components/ToolTips/Initial';
 import initialConsonants from 'data/initialConstatnts';
 import React, { useState } from 'react';
@@ -26,7 +26,7 @@ const RandomCloud: React.FC = () => {
     <div className="absolute flex flex-col items-center justify-center bottom-[44px]">
       <Initial initial={initial} />
       <img className="mb-[-45px]" src="/assets/Char/smile.svg" alt="smile" />
-      <LargeButton text="다른 제시어" onClick={handleChangeWord} />
+      <XLargeButton text="다른 제시어" onClick={handleChangeWord} />
     </div>
   );
 };

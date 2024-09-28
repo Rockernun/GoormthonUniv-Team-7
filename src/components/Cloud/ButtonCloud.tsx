@@ -1,4 +1,4 @@
-import { LargeButton } from 'components/Button/Button';
+import { LargeButton, XLargeButton } from 'components/Button/Button';
 import Description from 'components/ToolTips/Description';
 import Timer from 'components/ToolTips/Timer';
 import React, { useState } from 'react';
@@ -38,7 +38,7 @@ const ButtonCloud: React.FC<ButtonCloudProps> = ({
         />
       )}
       <img className="mb-[-45px]" src="/assets/Char/smile.svg" alt="smile" />
-      <LargeButton
+      <XLargeButton
         onClick={onToggleRunning}
         text={
           isRunning ? '그만하기' : minutes === 0 && seconds === 0 ? '시작하기' : '다시 시작하기'

@@ -8,12 +8,12 @@ interface SquareBoxProps {
 }
 
 const SquareBox: React.FC<SquareBoxProps> = ({ color, content, question }) => {
-  const boxStyle: string = `flex ${bgColors[color]} justify-center items-center border border-2 border-black w-[168px] h-[168px] px-[32px] py-[20px] rounded-description shadow-description`;
+  const boxStyle: string = `flex ${bgColors[color]} justify-center items-center border border-2 border-txt_primary w-[168px] h-[168px] px-[32px] py-[20px] rounded-description shadow-description`;
 
   return (
     <div className={boxStyle}>
       {!question ? (
-        <div className="text-[24px] text-center leading-content whitespace-pre-wrap max-w-[123px] max-h-[123px] overflow-hidden break-words">
+        <div className="text-[24px] text-center leading-8 whitespace-pre-wrap max-w-[123px] max-h-[123px] overflow-hidden break-words">
           {content}
         </div>
       ) : (

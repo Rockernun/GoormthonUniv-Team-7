@@ -1,6 +1,6 @@
 import React from 'react';
 import EtcBox from 'components/box/EtcBox';
-import { LargeButton } from 'components/Button/Button';
+import { LargeButton, XLargeButton } from 'components/Button/Button';
 import onBoarding from 'data/onBoarding';
 import { useHistory } from 'react-router-dom';
 
@@ -21,10 +21,10 @@ const Landing: React.FC = () => {
           />
           <EtcBox subject="onBoarding" color="white" onBoarding={onBoarding} />
         </div>
-        <a href="/" className="text-center text-[13px] text-txt_secondary">
+        <p className="text-center text-[13px] text-txt_secondary">
           카카오 X 구름톤 유니브 연합 해커톤 7팀
-        </a>
-        <LargeButton text="시작하기" onClick={handlePlanPage} />
+        </p>
+        <XLargeButton text="구글로 시작하기" bgColor="bg-white" onClick={handlePlanPage} img />
       </div>
     </div>
   );
