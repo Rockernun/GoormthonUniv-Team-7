@@ -1,15 +1,10 @@
-<<<<<<< Updated upstream
 import SquareBox from 'components/box/SquareBox';
 import NavBar from 'components/Bar/NavBar';
 import Description from 'components/ToolTips/Description';
-=======
-import Tab from 'components/Tab/Tab';
->>>>>>> Stashed changes
 import React from 'react';
 
 const TeamProject: React.FC = () => {
   return (
-<<<<<<< Updated upstream
     <div className="flex flex-col relative h-full">
       <NavBar subject="team" />
       {/* 구름 아이콘 카테고리 */}
@@ -29,11 +24,6 @@ const TeamProject: React.FC = () => {
         <SquareBox color="main" content="제안 해요" question={false} />
         <SquareBox color="white" content="" question={true} />
       </div>
-=======
-    <div className="flex flex-col justify-center items-center">
-      <h1>Team Project Page</h1>
-      <Tab buttonTexts={['처음 만났어요', '시간 조율', '스몰 토크', '제안해요', '?']} />
->>>>>>> Stashed changes
     </div>
   );
 };
