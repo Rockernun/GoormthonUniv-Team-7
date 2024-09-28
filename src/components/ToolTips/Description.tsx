@@ -8,7 +8,7 @@ const Description: React.FC<{ text: string }> = ({ text }) => {
           {text}
         </p>
       </div>
-      <img className="mt-[-8px]" src="/assets/triangle.svg" alt="triangle" />
+      <img className="w-[12px] h-[6px] mt-[-8px]" src="/assets/triangle.svg" alt="triangle" />
     </div>
   );
 };

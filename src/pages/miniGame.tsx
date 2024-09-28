@@ -1,5 +1,5 @@
 import NavBar from 'components/NavBar';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ShowGame from './Game/ShowGame';
 import ExplainCloud from 'components/Cloud/ExplainCloud';
 import ButtonCloud from 'components/Cloud/ButtonCloud';
@@ -11,16 +11,19 @@ import { getMinigames } from 'hooks/useGame';
 import { Minigame } from 'types/Minigame.type';
 
 const MiniGame: React.FC = () => {
-  const { data, error } = useQuery<MinigameResponse, Error>('minigames', getMinigames);
+  const { data, error, isLoading } = useQuery<MinigameResponse, Error>('minigames', getMinigames);
 
   const gameList: Minigame[] = data?.minigames || [];
-  const [gameType, setGameType] = useState<string>(gameList[0]?.name || '');
+  const [gameType, setGameType] = useState<string>('');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [pendingAction, setPendingAction] = useState<(() => void) | null>(null);
 
+  if (error) {
+    return <div>Error: {error.message}</div>; // UI에 에러 메시지 표시
+  }
   const handleModalOpen = (action: () => void) => {
-    setPendingAction(() => action); // 클릭한 액션 저장
+    setPendingAction(() => action);
     setIsModalOpen(true);
   };
 
@@ -30,10 +33,10 @@ const MiniGame: React.FC = () => {
 
   const handleConfirmAction = () => {
     if (pendingAction) {
-      pendingAction(); // 저장된 액션 실행
+      pendingAction();
     }
     setIsModalOpen(false);
-    setPendingAction(null); // 액션 초기화
+    setPendingAction(null);
   };
 
   const handleToggleRunning = () => {
@@ -45,7 +48,7 @@ const MiniGame: React.FC = () => {
     const newGameType =
       currentIndex > 0 ? gameList[currentIndex - 1].name : gameList[gameList.length - 1].name;
     setGameType(newGameType);
-    setIsRunning(false); // 게임 변경 시 스톱워치 중지
+    setIsRunning(false);
   };
 
   const handleNextGame = () => {
@@ -53,10 +56,9 @@ const MiniGame: React.FC = () => {
     const newGameType =
       currentIndex < gameList.length - 1 ? gameList[currentIndex + 1].name : gameList[0].name;
     setGameType(newGameType);
-    setIsRunning(false); // 게임 변경 시 스톱워치 중지
+    setIsRunning(false);
   };
 
-  // 현재 게임에 대한 설명 찾기
   const currentGameDescription = gameList.find((game) => game.name === gameType)?.description || '';
 
   return (
