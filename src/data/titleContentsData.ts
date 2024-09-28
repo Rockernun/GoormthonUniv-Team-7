@@ -1,6 +1,16 @@
 import { titleContents } from 'types/titleContents';
 
 const titleContentsData: { [key: string]: titleContents } = {
+  iceBraking: {
+    title: '아이스 브레이킹',
+    content:
+      '간단한 게임을 통해 자연스럽게 대화를 \n시작하고, 서로를 더 빠르게 알아갈 수 \n있어요!',
+  },
+  situation: {
+    title: '상황별 컨텐츠 추천',
+    content:
+      '현재 처해 있는 상황에 따라서 \n질문과 게임등을 추천해드릴게요! \n어색한 상황을 피해보세요~',
+  },
   vs: {
     title: '밸런스 게임',
     content:

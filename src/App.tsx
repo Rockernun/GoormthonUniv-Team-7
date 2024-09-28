@@ -5,8 +5,8 @@ import './index.css'; // Tailwind CSS를 사용하기 위해 추가
 
 function App() {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-[375px] h-[812px] bg-green-200">
+    <div className="flex justify-center items-center min-h-screen bg-green-200">
+      <div className="w-[375px] h-[812px]">
         <BrowserRouter>
           <AppRoutes />
         </BrowserRouter>

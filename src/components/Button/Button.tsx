@@ -1,8 +1,9 @@
 import { ButtonProps } from 'types/Button.type';
 
-export const LargeButton = ({ text, bgColor, textColor = 'text-black' }: ButtonProps) => {
+export const LargeButton = ({ text, bgColor, textColor = 'text-black', onClick }: ButtonProps) => {
   return (
     <button
+      onClick={onClick}
       className={`flex justify-center items-center gap-2 px-min-24px py-4 h-[70px] w-full max-w-full min-w-[142px] border-txt_primary border-2 shadow-[0_4px_4px_rgba(0,0,0,1)] rounded-[16px] ${
         bgColor ? bgColor : 'bg-main_primary'
       }`}

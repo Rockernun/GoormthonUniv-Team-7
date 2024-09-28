@@ -9,7 +9,7 @@ interface ExpandedBoxProps {
 }
 
 const ExpandedBox: React.FC<ExpandedBoxProps> = ({ title, isClick, color }) => {
-  const boxStyle: string = `flex flex-col ${bgColors[color]} justify-center items-center border border-2 border-black gap-[21px] w-[335px] px-[32px] py-[38px] rounded-description shadow-description`;
+  const boxStyle: string = `flex flex-col ${bgColors[color]} justify-center items-center border border-2 border-txt_primary gap-[21px] w-[335px] px-[32px] py-[38px] rounded-description shadow-description`;
   return (
     <div className={boxStyle}>
       <div className="flex gap-[10px]">

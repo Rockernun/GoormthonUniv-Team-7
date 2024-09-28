@@ -22,19 +22,15 @@ const AppRoutes: React.FC = () => {
 
       {/* 아이스 브레이킹 페이지와 그 하위 페이지 */}
       <Route exact path="/plans/ice-breaking" component={IceBreaking} />
-      <Route exact path="/plans/ice-breaking/balance-game" component={BalanceGame} />
+      <Route path="/plans/ice-breaking/balance-game" component={BalanceGame} />
       <Route path="/plans/ice-breaking/small-talk" component={SmallTalk} />
       <Route path="/plans/ice-breaking/mini-game" component={MiniGame} />
 
       {/* 상황별 컨텐츠 추천 페이지와 그 하위 페이지 */}
-      <Route path="/plans/content-recommendation" component={ContentRecommendation} />
+      <Route exact path="/plans/content-recommendation" component={ContentRecommendation} />
       <Route path="/plans/content-recommendation/drinking" component={Drinking} />
       <Route path="/plans/content-recommendation/team-project" component={TeamProject} />
-      <Route
-        exact
-        path="/plans/content-recommendation/networking-party"
-        component={NetworkingParty}
-      />
+      <Route path="/plans/content-recommendation/networking-party" component={NetworkingParty} />
     </Switch>
   );
 };
