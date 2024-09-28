@@ -7,7 +7,6 @@ import EtcBox from 'components/box/EtcBox';
 import { useQuery } from 'react-query';
 import { BalancegameResponse } from 'types/BalancegameResponse';
 import { getBalancegames } from 'hooks/useBalance';
-import { useState } from 'react';
 
 const BalanceGame: React.FC = () => {
   const { data, error, isLoading } = useQuery<BalancegameResponse, Error>('games', getBalancegames);
