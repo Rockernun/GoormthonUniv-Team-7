@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { LargeButton } from 'components/Button/Button';
+import { XLargeButton } from 'components/Button/Button';
 import NavBar from 'components/Bar/NavBar';
 import Description from 'components/ToolTips/Description';
 import { useQuery } from 'react-query';
 import { SmalltalkResponse } from 'types/SmalltalkResponse';
 import { getSmalltalks } from 'hooks/useSmall';
 import { Smalltalk } from 'types/Smalltalk.type';
-
-//  MBTI 부분을 텍스트로 받아와야 함
 
 const SmallTalk: React.FC = () => {
   const { data, error, isLoading } = useQuery<SmalltalkResponse, Error>('subject', getSmalltalks);
@@ -32,21 +30,23 @@ const SmallTalk: React.FC = () => {
     }
   };
   return (
-    <div className="p-[11px]">
+    <div className="p-[11px] flex flex-col items-center">
       <NavBar subject="drink" />
       <div className="flex flex-col justify-center items-center relative">
         <div className="flex gap-2 justify-center items-center h-[450px] text-txt_secondary">
           <img src="/assets/cloud.svg" alt="cloud-emoji" className="h-6 w-6" />
           <div>스몰토크 주제</div>
         </div>
-        <div className="absolute text-6xl top-64">
+        <div className="absolute text-4xl top-64 w-[335px] break-words text-center leading-[70px]">
           {smallTalkList ? smallTalkList[currentTopic]?.subject : '주제가 없습니다.'}
         </div>
       </div>
       <div className="absolute flex flex-col justify-center items-center w-[352px] bottom-[44px]">
         <Description text={smallTalkList ? smallTalkList[currentTopic]?.description : ''} />
         <img className="mb-[-45px]" src="/assets/GoormCharacter.svg" alt="goorm-character" />
-        <LargeButton text="다른 게임 할래요" onClick={handleNextTopic} />
+        <div className="w-[335px]">
+          <XLargeButton text="다른 게임 할래요" onClick={handleNextTopic} />
+        </div>
       </div>
     </div>
   );
